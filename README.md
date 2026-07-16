@@ -71,10 +71,3 @@ src/app/
     footer/    -> rodapé
 ```
 
-## Próximos passos sugeridos
-
-- Trocar o placeholder de foto pela sua foto profissional
-- Revisar todos os textos (eles estão com conteúdo de exemplo)
-- Conferir o número de WhatsApp e mensagem padrão
-- Se quiser, registrar um domínio e hospedar (Vercel, Netlify, ou qualquer host
-  de arquivos estáticos após rodar `npm run build`)
