@@ -1,0 +1,167 @@
+/* ===================================================================
+   TOKENS — troque aqui as cores/fontes se quiser mudar a identidade
+   =================================================================== */
+:root {
+  /* Paleta: papel + tinta + vinho + latão — remete a documentos,
+     selos e assinatura pessoal (em vez de um azul corporativo genérico) */
+  --color-paper: #faf7f2;
+  --color-paper-deep: #f1ebdf;
+  --color-ink: #20262e;
+  --color-ink-soft: #545f6b;
+  --color-wine: #7a2e2e;
+  --color-wine-deep: #5c2222;
+  --color-gold: #b08d57;
+  --color-sage: #45564c;
+  --color-line: #ddd2c0;
+  --color-card: #ffffff;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --shadow-card: 0 1px 2px rgba(32, 38, 46, 0.06);
+  --shadow-card-hover: 0 12px 28px -12px rgba(32, 38, 46, 0.22);
+
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-wine);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--color-wine);
+  display: inline-block;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+.section--deep {
+  background: var(--color-paper-deep);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--color-wine);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--color-wine-deep);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-ink);
+}
+
+/* Reveal-on-scroll (aplicado via [appReveal]) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-wine);
+  outline-offset: 2px;
+}

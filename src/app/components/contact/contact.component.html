@@ -1,0 +1,39 @@
+<section class="section section--deep" id="contato">
+  <div class="container contact__grid" appReveal>
+    <div class="contact__info">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos conversar sobre o seu caso</h2>
+      <p class="contact__lead">
+        Atendimento presencial em {{ content.advogado.cidade }} e online para todo o Brasil.
+      </p>
+
+      <ul class="contact__list">
+        <li>
+          <strong>Telefone</strong>
+          <a [href]="'tel:' + content.contato.telefone">{{ content.contato.telefone }}</a>
+        </li>
+        <li>
+          <strong>E-mail</strong>
+          <a [href]="'mailto:' + content.contato.email">{{ content.contato.email }}</a>
+        </li>
+        <li>
+          <strong>Endereço</strong>
+          <span>{{ content.contato.endereco }}</span>
+        </li>
+      </ul>
+
+      <a class="btn btn--primary" [href]="whatsappHref" target="_blank" rel="noopener">
+        Falar no WhatsApp
+      </a>
+    </div>
+
+    <div class="contact__map">
+      <iframe
+        [src]="mapUrl"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização"
+      ></iframe>
+    </div>
+  </div>
+</section>

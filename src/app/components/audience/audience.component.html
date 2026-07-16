@@ -1,0 +1,20 @@
+<section class="section" id="publico">
+  <div class="container">
+    <div class="audience__head" appReveal>
+      <span class="eyebrow">Para quem atendo</span>
+      <h2>Pessoas que buscam segurança jurídica nas decisões da vida</h2>
+    </div>
+
+    <div class="audience__grid">
+      @for (item of content.publico; track item.titulo) {
+        <div class="audience-card" appReveal>
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.descricao }}</p>
+          <a class="audience-card__link" [href]="whatsappHref" target="_blank" rel="noopener">
+            Agendar →
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+<section class="hero" id="topo">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow">{{ content.advogado.areaPrincipal }}</span>
+
+      <h1 class="hero__title">
+        {{ content.advogado.tratamento }} {{ content.advogado.nome }}
+      </h1>
+
+      <svg class="hero__signature" viewBox="0 0 280 28" fill="none" aria-hidden="true">
+        <path
+          d="M4 18 C 40 4, 60 26, 92 12 S 150 2, 178 16 S 230 26, 276 8"
+          stroke="var(--color-wine)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+      </svg>
+
+      <p class="hero__lead">{{ content.hero.subtitulo }}</p>
+
+      <div class="hero__meta">
+        <span>{{ content.advogado.oab }}</span>
+        <span class="hero__dot">•</span>
+        <span>{{ content.advogado.cidade }}</span>
+        @if (content.advogado.atendeOnline) {
+          <span class="hero__dot">•</span>
+          <span>Atendimento online</span>
+        }
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" [href]="whatsappHref" target="_blank" rel="noopener">
+          Agendar reunião
+        </a>
+        <a class="btn btn--ghost" href="#atuacao">Ver áreas de atuação</a>
+      </div>
+    </div>
+
+    <div class="hero__portrait">
+      @if (content.advogado.fotoUrl) {
+        <img [src]="content.advogado.fotoUrl" [alt]="content.advogado.nome" />
+      } @else {
+        <div class="hero__portrait-placeholder">
+          <span>Sua foto aqui</span>
+          <small>defina fotoUrl em content.ts</small>
+        </div>
+      }
+      <div class="hero__portrait-frame"></div>
+    </div>
+  </div>
+</section>

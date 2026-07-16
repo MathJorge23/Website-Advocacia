@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__seal">{{ content.advogado.iniciais }}</span>
+      <span>{{ content.advogado.tratamento }} {{ content.advogado.nome }} — {{ content.advogado.oab }}</span>
+    </div>
+
+    <nav class="footer__links">
+      <a href="#topo">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="footer__social">
+      <a [href]="content.redesSociais.instagram" target="_blank" rel="noopener">Instagram</a>
+      <a [href]="content.redesSociais.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© {{ year }} {{ content.advogado.tratamento }} {{ content.advogado.nome }}. Todos os direitos reservados.</span>
+  </div>
+</footer>

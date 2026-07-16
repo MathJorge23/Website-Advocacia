@@ -1,0 +1,36 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="container header__inner">
+    <a href="#topo" class="brand" (click)="closeMenu()">
+      <span class="brand__seal">{{ content.advogado.iniciais }}</span>
+      <span class="brand__name">
+        {{ content.advogado.tratamento }} {{ content.advogado.nome }}
+      </span>
+    </a>
+
+    <nav class="nav" [class.nav--open]="menuOpen()">
+      <a href="#sobre" (click)="closeMenu()">Sobre</a>
+      <a href="#atuacao" (click)="closeMenu()">Áreas de Atuação</a>
+      <a href="#publico" (click)="closeMenu()">Para Quem Atendo</a>
+      <a href="#contato" (click)="closeMenu()">Contato</a>
+      <a
+        class="btn btn--primary nav__cta"
+        [href]="whatsappHref"
+        target="_blank"
+        rel="noopener"
+        (click)="closeMenu()"
+      >
+        Agendar reunião
+      </a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
